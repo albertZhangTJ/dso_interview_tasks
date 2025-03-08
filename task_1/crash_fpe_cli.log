@@ -1,0 +1,35 @@
+albert@albert-thinkpad-p15-gen-1:~/imperial_interview/task_1$ ./a.out corpus
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 2590566361
+INFO: Loaded 1 modules   (147 inline 8-bit counters): 147 [0x5e14e11b0fd0, 0x5e14e11b1063), 
+INFO: Loaded 1 PC tables (147 PCs): 147 [0x5e14e11b1068,0x5e14e11b1998), 
+INFO:       77 files found in corpus
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 77 min: 1b max: 108b total: 2120b rss: 26Mb
+#78     INITED cov: 25 ft: 50 corp: 20/643b exec/s: 0 rss: 27Mb
+#141    REDUCE cov: 25 ft: 50 corp: 20/641b lim: 78 exec/s: 0 rss: 27Mb L: 21/78 MS: 3 InsertByte-ChangeBinInt-EraseBytes-
+#178    REDUCE cov: 25 ft: 50 corp: 20/638b lim: 78 exec/s: 0 rss: 27Mb L: 37/78 MS: 2 CMP-EraseBytes- DE: "\027\000\000\000\000\000\000\000"-
+#5214   REDUCE cov: 25 ft: 50 corp: 20/636b lim: 126 exec/s: 0 rss: 27Mb L: 76/76 MS: 1 EraseBytes-
+#5480   REDUCE cov: 25 ft: 50 corp: 20/631b lim: 126 exec/s: 0 rss: 27Mb L: 71/71 MS: 1 EraseBytes-
+UndefinedBehaviorSanitizer:DEADLYSIGNAL
+==134805==ERROR: UndefinedBehaviorSanitizer: FPE on unknown address 0x5e14e118d1cf (pc 0x5e14e118d1cf bp 0x7ffe056940e0 sp 0x7ffe05694030 T134805)
+    #0 0x5e14e118d1cf in kTest_bug /home/albert/imperial_interview/task_1/KTest.c:233:40
+    #1 0x5e14e118c222 in LLVMFuzzerTestOneInput /home/albert/imperial_interview/task_1/target.c:90:3
+    #2 0x5e14e1149573 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/home/albert/imperial_interview/task_1/a.out+0x26573) (BuildId: cbd94451ba1205ba138ad57f4035ccef9f581dc1)
+    #3 0x5e14e1148cc9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/home/albert/imperial_interview/task_1/a.out+0x25cc9) (BuildId: cbd94451ba1205ba138ad57f4035ccef9f581dc1)
+    #4 0x5e14e114a4b9 in fuzzer::Fuzzer::MutateAndTestOne() (/home/albert/imperial_interview/task_1/a.out+0x274b9) (BuildId: cbd94451ba1205ba138ad57f4035ccef9f581dc1)
+    #5 0x5e14e114b035 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile> >&) (/home/albert/imperial_interview/task_1/a.out+0x28035) (BuildId: cbd94451ba1205ba138ad57f4035ccef9f581dc1)
+    #6 0x5e14e1139172 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/albert/imperial_interview/task_1/a.out+0x16172) (BuildId: cbd94451ba1205ba138ad57f4035ccef9f581dc1)
+    #7 0x5e14e1162e62 in main (/home/albert/imperial_interview/task_1/a.out+0x3fe62) (BuildId: cbd94451ba1205ba138ad57f4035ccef9f581dc1)
+    #8 0x72001d629d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #9 0x72001d629e3f in __libc_start_main csu/../csu/libc-start.c:392:3
+    #10 0x5e14e112dbb4 in _start (/home/albert/imperial_interview/task_1/a.out+0xabb4) (BuildId: cbd94451ba1205ba138ad57f4035ccef9f581dc1)
+
+UndefinedBehaviorSanitizer can not provide additional info.
+SUMMARY: UndefinedBehaviorSanitizer: FPE /home/albert/imperial_interview/task_1/KTest.c:233:40 in kTest_bug
+==134805==ABORTING
+MS: 1 CrossOver-; base unit: ef5f7c50558d1249105cd6beea2add923008048b
+0x4b,0x41,0x21,0x0,0x47,0x53,0x54,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x18,0x8,0x0,0x0,0x0,0x23,0x0,0x0,0x0,0x0,0x0,
+KA!\000GST\000\000\000\000\000\000\000\000\000\030\010\000\000\000#\000\000\000\000\000
+artifact_prefix='./'; Test unit written to ./crash-525237a778396a16c575db3394c08b03456269e1
+Base64: S0EhAEdTVAAAAAAAAAAAABgIAAAAIwAAAAAA

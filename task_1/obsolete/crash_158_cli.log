@@ -1,0 +1,94 @@
+albert@albert-thinkpad-p15-gen-1:~/imperial_interview/task_1$ ./a.out -fork=16 corpus
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 3833566853
+INFO: Loaded 1 modules   (126 inline 8-bit counters): 126 [0x6158c1ecefd0, 0x6158c1ecf04e), 
+INFO: Loaded 1 PC tables (126 PCs): 126 [0x6158c1ecf050,0x6158c1ecf830), 
+INFO: -fork=16: fuzzing in separate process(s)
+INFO: -fork=16: 1 seed inputs, starting to fuzz in /tmp/libFuzzerTemp.FuzzWithFork94359.dir
+#1807: cov: 8 ft: 8 corp: 1 exec/s 451 oom/timeout/crash: 0/0/0 time: 4s job: 3 dft_time: 0
+  NEW_FUNC: 0x6158c1eaa080 in kTest_fromFile /home/albert/imperial_interview/task_1/KTest.c:94
+#2977: cov: 27 ft: 26 corp: 7 exec/s 117 oom/timeout/crash: 0/0/0 time: 10s job: 6 dft_time: 0
+#3191: cov: 30 ft: 29 corp: 9 exec/s 19 oom/timeout/crash: 0/0/0 time: 11s job: 2 dft_time: 0
+#5602: cov: 33 ft: 34 corp: 11 exec/s 200 oom/timeout/crash: 0/0/0 time: 12s job: 9 dft_time: 0
+  NEW_FUNC: 0x6158c1eaa860 in read_uint32 /home/albert/imperial_interview/task_1/KTest.c:25
+  NEW_FUNC: 0x6158c1eaae20 in kTest_bug /home/albert/imperial_interview/task_1/KTest.c:229
+  NEW_FUNC: 0x6158c1eaaee0 in kTest_free /home/albert/imperial_interview/task_1/KTest.c:236
+#7478: cov: 55 ft: 57 corp: 13 exec/s 144 oom/timeout/crash: 0/0/0 time: 21s job: 1 dft_time: 0
+#8485: cov: 57 ft: 63 corp: 15 exec/s 77 oom/timeout/crash: 0/0/0 time: 21s job: 10 dft_time: 0
+#11315: cov: 57 ft: 63 corp: 15 exec/s 217 oom/timeout/crash: 0/0/0 time: 21s job: 5 dft_time: 0
+#15550: cov: 58 ft: 64 corp: 16 exec/s 282 oom/timeout/crash: 0/0/0 time: 21s job: 8 dft_time: 0
+#18318: cov: 64 ft: 76 corp: 19 exec/s 153 oom/timeout/crash: 0/0/0 time: 21s job: 12 dft_time: 0
+#19992: cov: 66 ft: 80 corp: 21 exec/s 93 oom/timeout/crash: 0/0/0 time: 21s job: 7 dft_time: 0
+#20836: cov: 66 ft: 80 corp: 21 exec/s 44 oom/timeout/crash: 0/0/0 time: 21s job: 11 dft_time: 0
+#21983: cov: 66 ft: 80 corp: 21 exec/s 57 oom/timeout/crash: 0/0/0 time: 21s job: 4 dft_time: 0
+#22497: cov: 66 ft: 86 corp: 24 exec/s 18 oom/timeout/crash: 0/0/0 time: 28s job: 16 dft_time: 0
+#23888: cov: 66 ft: 86 corp: 24 exec/s 49 oom/timeout/crash: 0/0/0 time: 28s job: 14 dft_time: 0
+#28357: cov: 66 ft: 89 corp: 25 exec/s 154 oom/timeout/crash: 0/0/0 time: 29s job: 15 dft_time: 0
+#28403: cov: 68 ft: 94 corp: 27 exec/s 2 oom/timeout/crash: 0/0/0 time: 32s job: 17 dft_time: 0
+#28433: cov: 68 ft: 94 corp: 27 exec/s 1 oom/timeout/crash: 0/0/0 time: 37s job: 18 dft_time: 0
+#28763: cov: 68 ft: 94 corp: 27 exec/s 11 oom/timeout/crash: 0/0/0 time: 40s job: 19 dft_time: 0
+#29151: cov: 68 ft: 94 corp: 27 exec/s 14 oom/timeout/crash: 0/0/0 time: 47s job: 23 dft_time: 0
+#29260: cov: 68 ft: 97 corp: 28 exec/s 3 oom/timeout/crash: 0/0/0 time: 52s job: 26 dft_time: 0
+#29542: cov: 68 ft: 98 corp: 29 exec/s 8 oom/timeout/crash: 0/0/0 time: 55s job: 27 dft_time: 0
+#29613: cov: 68 ft: 98 corp: 29 exec/s 23 oom/timeout/crash: 0/0/0 time: 56s job: 36 dft_time: 0
+INFO: log from the inner process:
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 667065710
+INFO: Loaded 1 modules   (126 inline 8-bit counters): 126 [0x5a298c930fd0, 0x5a298c93104e), 
+INFO: Loaded 1 PC tables (126 PCs): 126 [0x5a298c931050,0x5a298c931830), 
+INFO:        0 files found in /tmp/libFuzzerTemp.FuzzWithFork94359.dir/C36
+INFO: -max_len is not provided; libFuzzer will not generate inputs larger than 4096 bytes
+INFO: seed corpus: files: 5 min: 16b max: 46b total: 120b rss: 27Mb
+#6      INITED cov: 34 ft: 42 corp: 4/100b exec/s: 3 rss: 27Mb
+#7      NEW    cov: 37 ft: 45 corp: 5/120b lim: 46 exec/s: 3 rss: 27Mb L: 20/46 MS: 1 CopyPart-
+#8      pulse  cov: 37 ft: 45 corp: 5/120b lim: 46 exec/s: 4 rss: 27Mb
+#13     NEW    cov: 45 ft: 53 corp: 6/148b lim: 46 exec/s: 6 rss: 27Mb L: 28/46 MS: 1 InsertRepeatedBytes-
+#14     NEW    cov: 48 ft: 58 corp: 7/181b lim: 46 exec/s: 7 rss: 27Mb L: 33/46 MS: 1 InsertRepeatedBytes-
+#16     pulse  cov: 48 ft: 58 corp: 7/181b lim: 46 exec/s: 8 rss: 27Mb
+#25     NEW    cov: 50 ft: 60 corp: 8/197b lim: 46 exec/s: 12 rss: 27Mb L: 16/46 MS: 1 CMP- DE: "\001\000\000\000"-
+#28     NEW    cov: 51 ft: 62 corp: 9/225b lim: 46 exec/s: 14 rss: 27Mb L: 28/46 MS: 3 ChangeByte-ChangeASCIIInt-EraseBytes-
+#32     pulse  cov: 51 ft: 62 corp: 9/225b lim: 46 exec/s: 16 rss: 27Mb
+#50     NEW    cov: 53 ft: 64 corp: 10/241b lim: 46 exec/s: 25 rss: 27Mb L: 16/46 MS: 2 CrossOver-EraseBytes-
+#53     NEW    cov: 53 ft: 66 corp: 11/258b lim: 46 exec/s: 26 rss: 47Mb L: 17/46 MS: 3 InsertByte-ChangeBit-ChangeBit-
+#64     pulse  cov: 53 ft: 66 corp: 11/258b lim: 46 exec/s: 32 rss: 47Mb
+munmap_chunk(): invalid pointer
+==95896== ERROR: libFuzzer: deadly signal
+    #0 0x5a298c90bb54 in __sanitizer_print_stack_trace (/home/albert/imperial_interview/task_1/a.out+0x68b54) (BuildId: 5bffa0ab5cd7228d16b909497f6e042dbe739071)
+    #1 0x5a298c8e2568 in fuzzer::PrintStackTrace() (/home/albert/imperial_interview/task_1/a.out+0x3f568) (BuildId: 5bffa0ab5cd7228d16b909497f6e042dbe739071)
+    #2 0x5a298c8c7fe3 in fuzzer::Fuzzer::CrashCallback() (/home/albert/imperial_interview/task_1/a.out+0x24fe3) (BuildId: 5bffa0ab5cd7228d16b909497f6e042dbe739071)
+    #3 0x7a1c0ac4251f  (/lib/x86_64-linux-gnu/libc.so.6+0x4251f) (BuildId: cd410b710f0f094c6832edd95931006d883af48e)
+    #4 0x7a1c0ac969fb in __pthread_kill_implementation nptl/./nptl/pthread_kill.c:43:17
+    #5 0x7a1c0ac969fb in __pthread_kill_internal nptl/./nptl/pthread_kill.c:78:10
+    #6 0x7a1c0ac969fb in pthread_kill nptl/./nptl/pthread_kill.c:89:10
+    #7 0x7a1c0ac42475 in gsignal signal/../sysdeps/posix/raise.c:26:13
+    #8 0x7a1c0ac287f2 in abort stdlib/./stdlib/abort.c:79:7
+    #9 0x7a1c0ac89676 in __libc_message libio/../sysdeps/posix/libc_fatal.c:156:5
+    #10 0x7a1c0aca0cfb in malloc_printerr malloc/./malloc/malloc.c:5664:3
+    #11 0x7a1c0aca0fdb in munmap_chunk malloc/./malloc/malloc.c:3060:5
+    #12 0x7a1c0aca5499 in __libc_free malloc/./malloc/malloc.c:3381:7
+    #13 0x5a298c90c76e in kTest_fromFile /home/albert/imperial_interview/task_1/KTest.c:158:7
+    #14 0x5a298c90bed2 in LLVMFuzzerTestOneInput /home/albert/imperial_interview/task_1/target.c:33:17
+    #15 0x5a298c8c9573 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/home/albert/imperial_interview/task_1/a.out+0x26573) (BuildId: 5bffa0ab5cd7228d16b909497f6e042dbe739071)
+    #16 0x5a298c8c8cc9 in fuzzer::Fuzzer::RunOne(unsigned char const*, unsigned long, bool, fuzzer::InputInfo*, bool, bool*) (/home/albert/imperial_interview/task_1/a.out+0x25cc9) (BuildId: 5bffa0ab5cd7228d16b909497f6e042dbe739071)
+    #17 0x5a298c8ca4b9 in fuzzer::Fuzzer::MutateAndTestOne() (/home/albert/imperial_interview/task_1/a.out+0x274b9) (BuildId: 5bffa0ab5cd7228d16b909497f6e042dbe739071)
+    #18 0x5a298c8cb035 in fuzzer::Fuzzer::Loop(std::vector<fuzzer::SizedFile, std::allocator<fuzzer::SizedFile> >&) (/home/albert/imperial_interview/task_1/a.out+0x28035) (BuildId: 5bffa0ab5cd7228d16b909497f6e042dbe739071)
+    #19 0x5a298c8b9172 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/home/albert/imperial_interview/task_1/a.out+0x16172) (BuildId: 5bffa0ab5cd7228d16b909497f6e042dbe739071)
+    #20 0x5a298c8e2e62 in main (/home/albert/imperial_interview/task_1/a.out+0x3fe62) (BuildId: 5bffa0ab5cd7228d16b909497f6e042dbe739071)
+    #21 0x7a1c0ac29d8f in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #22 0x7a1c0ac29e3f in __libc_start_main csu/../csu/libc-start.c:392:3
+    #23 0x5a298c8adbb4 in _start (/home/albert/imperial_interview/task_1/a.out+0xabb4) (BuildId: 5bffa0ab5cd7228d16b909497f6e042dbe739071)
+
+NOTE: libFuzzer has rudimentary signal handlers.
+      Combine libFuzzer with AddressSanitizer or similar for better crash reports.
+SUMMARY: libFuzzer: deadly signal
+MS: 3 CMP-CopyPart-InsertRepeatedBytes- DE: "\377\377\377\356"-; base unit: 66f3b2ee2bbbf2b96fa8a5a0aca6c038ebddfb77
+0x42,0x4f,0x55,0x54,0xa,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xff,0xff,0x0,0x0,0xff,0xff,0x0,0x0,0x0,0x0,0xff,0xff,0xff,0xee,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0xe,0x1,
+BOUT\012\000\000\000\000\000\000\000\000\000\377\377\000\000\377\377\000\000\000\000\377\377\377\356\000\000\000\000\000\000\000\000\000\000\000\016\001
+artifact_prefix='./'; Test unit written to ./crash-3b29d0cd24e8b4e4681a2022e395049541d8beef
+Base64: Qk9VVAoAAAAAAAAAAAD//wAA//8AAAAA////7gAAAAAAAAAAAAAADgE=
+stat::number_of_executed_units: 71
+stat::average_exec_per_sec:     23
+stat::new_units_added:          7
+stat::slowest_unit_time_sec:    0
+stat::peak_rss_mb:              49
+INFO: exiting: 77 time: 72s
