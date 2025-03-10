@@ -81,7 +81,37 @@ This implementation creates a fuzzer target for the `kTest_bug` function. Here's
 When LibFuzzer runs with this target, it will generate random inputs that get converted into `KTest` structures with varying object counts and byte arrays, allowing it to explore the behavior of the `kTest_bug` function and potentially find inputs that cause crashes.
 ```
 
-The LLM was also prompted to generate a corpus generator `ktest-corpus-generator.c`.
+The LLM was also prompted to generate a corpus generator `ktest-corpus-generator.c`, which works as-is without any manual modification.
 
 ## Modification to the Target
-The fuzz target provided by LLM was then manually modified to 
+The fuzz target provided by LLM (see `ktest-fuzz-target.txt`) was then manually modified to match the actual status of the repository (could have specified this in the prompt).
+The main changes are: removed the declaration of the `kTest_bug` as well as the structs in the target code itself.
+Removed the `try ... catch` block and the `extern "C"` declaration (seems like the LLM assumed C++).
+
+The main logic of the code works as-is.
+
+## Fuzz Target
+The actual target can be found at `target.c`.
+
+## Quick Start
+Given all dependencies are properly installed, the fuzzer can be started with the one-liner
+```
+clang -g -O1 -fsanitize=fuzzer target.c KTest.h KTest.c && ./a.out -corpus
+```
+
+## Execution Results
+One crashing input can be found at `crash_fpe.ktest`, the crash can be reproduced using the following one-liner
+```
+gcc verify.c KTest.h KTest.c -o verify && ./verify crash_fpe.ktest
+```
+
+The execution log of LibFuzzer leading to the crash can be found at `crash_fpe_cli.log`.
+
+The execution of this run took less than 10 seconds.
+This statistics 
+
+## Trialed and Error-ed
+An experiment to fuzz the code-under-test with the help of `kTest_fromFile` function was performed.
+We have found a few crashes that are unrelated to the target function.
+
+The target, crashes, and logs related to this attempt can be found under `obsolete/`.

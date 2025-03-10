@@ -12,29 +12,21 @@ struct InstCnt : public FunctionPass {
   InstCnt() : FunctionPass(ID) {}
 
   bool runOnFunction(Function &F) override {
-    
-    unsigned numBB = 0;
-    
     for (auto &BB : F) {
-      numBB++;
       unsigned numInst = 0;
       for (auto &I : BB) {
         numInst++;
       }
       errs() << numInst << "\n";
     }
-    
     return false;
   }
 };
 
-// Initialize the pass ID (outside any namespace)
 char InstCnt::ID = 0;
 
-// Register the pass - this MUST be outside any namespace
 static RegisterPass<InstCnt> X("instcnt", "Per block instruction count");
 
-// Register for opt automatic inclusion
 static RegisterStandardPasses Y(
     PassManagerBuilder::EP_EarlyAsPossible,
     [](const PassManagerBuilder &Builder, legacy::PassManagerBase &PM) {
