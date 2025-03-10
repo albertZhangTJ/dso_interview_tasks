@@ -108,7 +108,7 @@ gcc verify.c KTest.h KTest.c -o verify && ./verify crash_fpe.ktest
 The execution log of LibFuzzer leading to the crash can be found at `crash_fpe_cli.log`.
 
 The execution of this run took less than 10 seconds.
-This statistics 
+This statistics can be misleading, as the `corpus/` folder contains some seeds from a previous failed trial (see below).
 
 ## Trialed and Error-ed
 An experiment to fuzz the code-under-test with the help of `kTest_fromFile` function was performed.
