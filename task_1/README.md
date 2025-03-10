@@ -96,7 +96,7 @@ The actual target can be found at `target.c`.
 ## Quick Start
 Given all dependencies are properly installed, the fuzzer can be started with the one-liner
 ```
-clang -g -O1 -fsanitize=fuzzer target.c KTest.h KTest.c && ./a.out -corpus
+clang -g -O1 -fsanitize=fuzzer target.c KTest.h KTest.c && ./a.out corpus
 ```
 
 ## Execution Results
@@ -113,5 +113,6 @@ This statistics can be misleading, as the `corpus/` folder contains some seeds f
 ## Trialed and Error-ed
 An experiment to fuzz the code-under-test with the help of `kTest_fromFile` function was performed.
 We have found a few crashes that are unrelated to the target function.
+The attempt to directly trigger the division-by-zero error using this approach did not succeed after roughly 30 minutes fuzzing time.
 
 The target, crashes, and logs related to this attempt can be found under `obsolete/`.
