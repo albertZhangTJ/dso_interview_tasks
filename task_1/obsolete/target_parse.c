@@ -42,7 +42,9 @@ int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
    // Try to recover from potential invalid free
   if (setjmp(jump_buffer) == 0) {
     // Use the provided function to parse the file into a KTest object
+    printf("Starting execution\n");
     KTest *test = kTest_fromFile(tmpfilename);
+    
 
     // If we couldn't parse the file, just return
     if (!test) {
@@ -53,11 +55,12 @@ int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
     // Call the target function with the parsed KTest object
     unsigned result = 0;
     result = kTest_bug(test);
+    printf("kTest_bug executed\n");
   
     // Clean up using the provided cleanup function
     kTest_free(test);
   } else {
-    printf("Recovered from invalid free in function f()\n");
+    
   }
   
   // Remove the temporary file as soon as we've read it
