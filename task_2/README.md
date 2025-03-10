@@ -5,7 +5,7 @@ This task is about implementing an LLVM pass to get statistics about numbers of 
 The prompt used was `Tell me about how to write an LLVM pass. I have no background knowledge nor the environment. Please start from a bare Ubuntu 22.04`.
 The LLM agent generated an example pass, which can be found under `example_claude/`.
 This example is incidentally very close to what is required in the task.
-I believe it does not make too much sense to disregard the available example on hand and start from scratch.
+I believe it does not make too much sense to disregard the available example on hand and start from scratch, so I simply used it with minimal changes.
 The same agent was also used to generate the gnuplot script `gp.gp`.
 
 
